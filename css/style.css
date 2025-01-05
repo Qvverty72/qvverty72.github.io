@@ -5,7 +5,10 @@
     --background-color: rgb(240, 255, 240);
 }
 
-body {
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
@@ -31,8 +34,8 @@ h1 {
 
 h2 {
     color: var(--secondary-color);
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    margin-bottom: 20px;
     border-bottom: 3px solid var(--primary-color);
     padding-bottom: 10px;
 }
@@ -48,11 +51,49 @@ p {
     color: var(--text-color);
 }
 
-.profile-content {
-    background-color: rgba(0, 230, 0, 0.05);
-    padding: 20px;
-    border-radius: 5px;
-    border-left: 5px solid var(--primary-color);
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.progress-bar {
+    flex-grow: 1;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--primary-color);
+    width: 0;
+    transition: width 1s ease-in-out;
+    position: relative;
+}
+
+.percent {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+.d-inline-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -60,4 +101,25 @@ p {
         margin: 20px;
         padding: 20px;
     }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .skill-item i {
+        font-size: 48px !important;
+    }
 }
+
