@@ -97,17 +97,24 @@ p {
     width: 0;
     transition: width 1s ease-in-out;
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .percent {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
     color: white;
     font-weight: bold;
     font-size: 12px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-20%, -50%);
+    z-index: 1;
+    white-space: nowrap;
 }
+
+
+
 .d-inline-flex {
     display: flex;
     flex-direction: column;
